@@ -1,12 +1,5 @@
-// products.html script extracted
-// ============================================
-// PRODUCTS PAGE SCRIPT
-// ============================================
-
 document.addEventListener('DOMContentLoaded', () => {   
-    // =====================
-    // NAVIGATION SCROLLING
-    // =====================
+   
     let navBar = document.querySelector('nav');
     
     function navScroll(result) {
@@ -25,9 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navScroll(false)
     })
 
-    // =====================
-    // MENU BAR
-    // =====================
+    // menu bar
     let menuBar = document.querySelector('#menu-bar');
     let menuPage = document.querySelector('#menu-page');
     let html = document.querySelector('html');
@@ -50,10 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         html.style.overflow = (menuPage.classList.contains('active')) ? "hidden" : "scroll"
         navScroll(menuPage.classList.contains('active'))
     })
-
-    // =====================
-    // PRODUCT CARDS DISPLAY
-    // =====================
+     // product card
     let productContainerWidth = document.querySelector('.product-cards-container').offsetWidth;
     let rootStyles = getComputedStyle(html);
     let productCardWidth;
@@ -94,9 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionLastElement[section.id] = lastElement;
     })
 
-    // =====================
-    // LOCALSTORAGE FUNCTIONS
-    // =====================
+    // localstorage metodları
     function getCart() {
         const cart = localStorage.getItem('cart');
         return cart ? JSON.parse(cart) : [];
@@ -159,9 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // =====================
-    // CART SYSTEM
-    // =====================
+    // sepete ekleme
     function addToCart(productCard) {
         const productName = productCard.querySelector('.product-text-container h1').textContent;
         const productPrice = productCard.querySelector('.product-text-container p').textContent;
@@ -197,14 +181,14 @@ document.addEventListener('DOMContentLoaded', () => {
         showNotification('Ürün sepetten çıkarıldı');
     }
 
-    // Cart butonları
+    // cart butonları
     let cartButtons = document.querySelectorAll('.product-card .blue-button');
     
     cartButtons.forEach((button) => {
         const productCard = button.closest('.product-card');
         const productId = generateProductId(productCard.querySelector('.product-text-container h1').textContent);
         
-        // Sayfa yüklendiğinde sepetteki ürünleri işaretle
+        
         const cart = getCart();
         if (cart.some(item => item.id === productId)) {
             button.classList.add('active');
@@ -224,9 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // =====================
-    // WISHLIST SYSTEM
-    // =====================
+    // favorilere ekleme
     function addToWishlist(productCard, heartButton) {
         const productName = productCard.querySelector('.product-text-container h1').textContent;
         const productPrice = productCard.querySelector('.product-text-container p').textContent;
@@ -257,14 +239,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Wishlist butonları
+    // wishlist butonları
     let heartButtons = document.querySelectorAll('.heart-button');
 
     heartButtons.forEach((button) => {
         const productCard = button.closest('.product-card');
         const productId = generateProductId(productCard.querySelector('.product-text-container h1').textContent);
         
-        // Sayfa yüklendiğinde wishlist'teki ürünleri işaretle
+
         const wishlist = getWishlist();
         if (wishlist.some(item => item.id === productId)) {
             button.classList.add('active');
@@ -275,9 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // =====================
-    // SLIDESHOW
-    // =====================
+    // slide show
     let slideshowButtons = document.querySelectorAll('.slideshow-button');
     slideshowButtons.forEach((button) => {
         button.addEventListener('click', () => {
@@ -330,9 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateWishlistCount();
 });
 
-// =====================
-// CSS ANIMATIONS
-// =====================
+
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideIn {

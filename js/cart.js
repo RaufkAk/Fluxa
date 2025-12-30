@@ -1,12 +1,5 @@
-// cart.html script extracted
-// ============================================
-// CART PAGE SCRIPT
-// ============================================
-
 document.addEventListener('DOMContentLoaded', () => {
-    // =====================
-    // NAVIGATION SCROLL
-    // =====================
+    
     let navBar = document.querySelector('nav');
     document.addEventListener('scroll', () => {
         if (window.scrollY > 0) {
@@ -18,9 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // =====================
-    // LOCALSTORAGE FUNCTIONS
-    // =====================
+    
     function getCart() {
         const cart = localStorage.getItem('cart');
         return cart ? JSON.parse(cart) : [];
@@ -63,9 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // =====================
-    // RENDER CART
-    // =====================
+    // render cart items
     function renderCart() {
         const cartItems = getCart();
         const cartContainer = document.getElementById('cart-items');
@@ -136,9 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('total').textContent = `$${total.toFixed(2)}`;
     }
 
-    // =====================
-    // EVENT LISTENERS
-    // =====================
+    // listenerlar
     function attachEventListeners() {
         // Artırma butonları
         document.querySelectorAll('.qty-btn.plus').forEach(btn => {
@@ -184,9 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // =====================
-    // CLEAR CART BUTTON
-    // =====================
+    // clear button
     function showClearButton() {
         let clearBtn = document.getElementById('clear-cart-btn');
         if (!clearBtn) {
@@ -233,9 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // =====================
-    // CHECKOUT FORM
-    // =====================
+    // chekout form submission
     const checkoutForm = document.getElementById('checkout-form');
     checkoutForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -285,16 +268,11 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.reload();
     });
 
-    // =====================
-    // INITIALIZE
-    // =====================
+
     renderCart();
     updateNavCount();
 });
 
-// =====================
-// CSS ANIMATIONS
-// =====================
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideIn {
