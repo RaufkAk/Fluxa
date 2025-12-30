@@ -54,7 +54,7 @@ function createWishlistItem(item, index) {
             <h3>${item.name}</h3>
             <p class="price">${item.price}</p>
             <div class="wishlist-item-actions">
-                <button class="add-to-cart-btn" onclick="addToCart(${index})">Add to Cart</button>
+                <button class="add-to-cart-btn" onclick="addToCart(${index}, this)">Add to Cart</button>
             </div>
         </div>
     `;
@@ -68,30 +68,29 @@ function removeFromWishlist(index) {
     updateNavCount();
 }
 
-// Sepete ekle bozuk 
-function addToCart(index) {
+function addToCart(index, btn) {
     const item = wishlist[index];
-    const btn = event.target;
 
-    // Sepete ekle animasyonu
-    btn.textContent = 'Added!';
-    btn.classList.add('added');
-    
-
-    // Cart'a ekle (localStorage)
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existingItem = cart.find(cartItem => cartItem.name === item.name);
+    const existingItem = cart.find(cartItem => cartItem.id === (item.id || generateProductId(item.name)));
 
     if (!existingItem) {
-        cart.push(item);
+        cart.push({
+            id: item.id || (typeof generateProductId === 'function' ? generateProductId(item.name) : item.name.toLowerCase().replace(/\\s+/g, '-')),
+            name: item.name,
+            price: parseFloat(String(item.price).replace(/[^0-9.]/g, "")),
+            image: item.image,
+            quantity: 1
+        });
         localStorage.setItem('cart', JSON.stringify(cart));
     }
 
+    btn.textContent = 'Added!';
+    btn.classList.add('added');
     setTimeout(() => {
         btn.textContent = 'Add to Cart';
         btn.classList.remove('added');
     }, 2000);
-    
 }
 
 // Clear All butonuna event listener
