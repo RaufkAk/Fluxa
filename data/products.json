@@ -1,0 +1,112 @@
+[
+  {
+    "id": "hp-01",
+    "name": "Navy Headphones",
+    "category": "headphones",
+    "price": 87.99,
+    "currency": "USD",
+    "image": "images/product-page/headphones/01.png",
+    "sku": "NH-001",
+    "stock": 24,
+    "description": "Comfortable over-ear headphones with deep bass and long battery life"
+  },
+  {
+    "id": "hp-02",
+    "name": "Golden Headphones",
+    "category": "headphones",
+    "price": 130.99,
+    "currency": "USD",
+    "image": "images/product-page/headphones/06.png",
+    "sku": "GH-006",
+    "stock": 12,
+    "description": "Premium metal finish with noise cancellation"
+  },
+  {
+    "id": "lp-03",
+    "name": "Turquoise Laptop",
+    "category": "laptop",
+    "price": 249.99,
+    "currency": "USD",
+    "image": "images/product-page/laptop/03.png",
+    "sku": "TL-003",
+    "stock": 8,
+    "description": "Lightweight laptop with vivid display and long battery life"
+  },
+  {
+    "id": "mb-01",
+    "name": "Skyblue Phone",
+    "category": "mobile",
+    "price": 149.99,
+    "currency": "USD",
+    "image": "images/product-page/mobile/03.png",
+    "sku": "SP-003",
+    "stock": 30,
+    "description": "Compact smartphone with great camera and smooth UI"
+  },
+  {
+    "id": "tb-01",
+    "name": "Lilac Tablet",
+    "category": "tablet",
+    "price": 135.99,
+    "currency": "USD",
+    "image": "images/product-page/tablet/03.png",
+    "sku": "LT-003",
+    "stock": 15,
+    "description": "Portable tablet perfect for reading and streaming"
+  },
+  {
+    "id": "sw-01",
+    "name": "Floss Smartwatch",
+    "category": "smartwatch",
+    "price": 99.99,
+    "currency": "USD",
+    "image": "images/product-page/smartwatch/01.png",
+    "sku": "FS-001",
+    "stock": 40,
+    "description": "Stylish smartwatch with fitness tracking"
+  },
+  {
+    "id": "hp-03",
+    "name": "Candy Headphones",
+    "category": "headphones",
+    "price": 88.99,
+    "currency": "USD",
+    "image": "images/product-page/headphones/03.png",
+    "sku": "CH-003",
+    "stock": 20,
+    "description": "Colorful headphones with balanced sound"
+  },
+  {
+    "id": "lp-11",
+    "name": "Coral Laptop",
+    "category": "laptop",
+    "price": 255.99,
+    "currency": "USD",
+    "image": "images/product-page/laptop/11.png",
+    "sku": "CL-011",
+    "stock": 6,
+    "description": "High-performance laptop for creative work"
+  },
+  {
+    "id": "mb-07",
+    "name": "Sunset Phone",
+    "category": "mobile",
+    "price": 155.99,
+    "currency": "USD",
+    "image": "images/product-page/mobile/07.png",
+    "sku": "SS-007",
+    "stock": 10,
+    "description": "Phone with bright display and fast charging"
+  },
+  {
+    "id": "tb-10",
+    "name": "Lead Tablet",
+    "category": "tablet",
+    "price": 139.99,
+    "currency": "USD",
+    "image": "images/product-page/tablet/10.png",
+    "sku": "LT-010",
+    "stock": 7,
+    "description": "Powerful tablet for productivity"
+  }
+]
