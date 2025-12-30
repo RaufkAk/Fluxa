@@ -109,9 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showClearButton();
     }
 
-    // =====================
-    // UPDATE TOTALS
-    // =====================
+    // update toplam tutar
     function updateTotals() {
         const cartItems = getCart();
         const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
